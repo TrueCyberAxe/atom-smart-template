@@ -25,10 +25,10 @@ class ParamSelectView extends View
 
 
   attach: ->
-    @panel = atom.workspace.addModalPanel(item: this)
+    @panel = atom.workspace.addModalPanel(item: this, autoFocus: true)
     for param in (@template.params ? [])
       @[param.name+"Editor"].setText(param.default)
-    # @miniEditor.focus()
+
 
   destroy: ->
     @panel.destroy()
